@@ -9,6 +9,7 @@ var compilerOptions = require('../babel-options');
 var assign = Object.assign || require('object.assign');
 var notify = require('gulp-notify');
 var browserSync = require('browser-sync');
+var buildSemantic = require('../../styles/semantic/tasks/build')
 
 // transpiles changed es6 files to SystemJS format
 // the plumber() call prevents 'pipe breaking' caused
@@ -23,6 +24,9 @@ gulp.task('build-system', function() {
     .pipe(sourcemaps.write({includeContent: false, sourceRoot: '/src'}))
     .pipe(gulp.dest(paths.output));
 });
+
+//calls semantics gulp build task
+gulp.task('build-semantic', buildSemantic);
 
 // copies changed html files to the output directory
 gulp.task('build-html', function() {
@@ -46,7 +50,7 @@ gulp.task('build-css', function() {
 gulp.task('build', function(callback) {
   return runSequence(
     'clean',
-    ['build-system', 'build-html', 'build-css'],
+    ['build-system', 'build-semantic', 'build-html', 'build-css'],
     callback
   );
 });

@@ -1,11 +1,15 @@
 var gulp = require('gulp');
 var paths = require('../paths');
 var browserSync = require('browser-sync');
+var watchSemantic = require('../../styles/semantic/tasks/watch')
 
 // outputs changes to files to the console
 function reportChange(event) {
   console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
 }
+
+//calls out to gulp watch task for semantic
+
 
 // this task wil watch for changes
 // to js, html, and css files and call the
@@ -19,4 +23,5 @@ gulp.task('watch', ['serve'], function() {
     return gulp.src(paths.style)
       .pipe(browserSync.stream());
   }).on('change', reportChange);
+  gulp.task('watch-semantic', watchSemantic);
 });

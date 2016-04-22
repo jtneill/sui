@@ -1,3 +1,6 @@
 /*******************************
     User Variable Overrides
 *******************************/
+@lineHeight: 4em;
+@imageWidth: 3.5em;
+@imageHeight: 100%;

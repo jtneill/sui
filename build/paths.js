@@ -5,6 +5,7 @@ var exportSrvRoot = 'export/';
 module.exports = {
   root: appRoot,
   source: appRoot + '**/*.js',
+  semantic: 'styles/semantic/tasks/build',
   html: appRoot + '**/*.html',
   css: appRoot + '**/*.css',
   style: 'styles/**/*.css',
