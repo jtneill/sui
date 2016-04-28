@@ -1,0 +1,27 @@
+<template>
+  <div class="ui segment" style="padding-top:50px">
+    <div class="ui top attached black header">Advisors</div>
+    <grid css-framework="semantic" data-source.bind="advisors">
+      <template replace-part="grid-template">
+        <grid-column property="Name" filterable>Advisor Group</grid-column>
+        <grid-column property="ContactPerson" filterable>Contact Person</grid-column>
+        <grid-column property="Details"></grid-column>
+        <grid-column property="Total AUM"></grid-column>
+        <grid-column property="Active Accounts"></grid-column>
+        <grid-column property="Pending Accounts"></grid-column>
+        <grid-column property="Hold Accounts"></grid-column>
+      </template>
+    </grid>
+  </div>
+</template>
+<!--
+{
+    "Id": 1,
+    "Name": "Thomas and Sons Wealth Management",
+    "ContactPerson": "jason",
+    "Details": "here areadvisor details",
+    "Accounts": null,
+    "ClientAdvisor": null,
+    "InstitutionalAdvisor": null
+  }
+  -->

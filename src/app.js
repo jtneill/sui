@@ -8,9 +8,25 @@ export class App {
         moduleId: 'accounts',      
         nav: true, title: 'Accounts' 
       },
-      { route: 'users',         name: 'users',        moduleId: 'users',        nav: true, title: 'Github Users' },
-      { route: 'child-router',  name: 'child-router', moduleId: 'child-router', nav: true, title: 'Child Router' }
-    ]);
+      { 
+        route: ['advisors'], 
+        name: 'advisors',      
+        moduleId: 'advisors',      
+        nav: true, title: 'Advisors' 
+      },
+      { 
+        route: ['strategies'], 
+        name: 'strategies',      
+        moduleId: 'strategies',      
+        nav: true, title: 'Strategies' 
+      },
+      { 
+        route: ['billing'], 
+        name: 'billing',      
+        moduleId: 'billing',      
+        nav: true, title: 'Billing' 
+      }
+      ]);
 
     this.router = router;
   }
