@@ -1,0 +1,30 @@
+<template>
+  <div class="ui segment">
+    <div class="ui top attached inverted blue header">Accounts</div>
+    <grid data-source.bind="accounts">
+      <template replace-part="grid-template">
+        <grid-column property="CompoundAccountNumber" filterable sortable></grid-column>
+        <grid-column property="CustodianAccountNumber" filterable sortable></grid-column>
+        <grid-column property="Advisor"></grid-column>
+      </template>
+    </grid>
+  </div>
+</template>
+<!--
+{
+    "Id": 2,
+    "CompoundAccountNumber": "A.T.IOC.00001",
+    "CustodianAccountNumber": "546729264",
+    "Advisor": null,
+    "ClientAdvisor": null,
+    "InstitutionalAdvisor": null,
+    "RepCode": null,
+    "Strategy": null,
+    "Custodian": null,
+    "Allocation": 0.75,
+    "StrategyFocus": null,
+    "AccountStatus": null,
+    "StrategyRules": null,
+    "Updated": "2016-04-20T03:21:02.183"
+  }
+  -->
