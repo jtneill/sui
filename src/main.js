@@ -4,8 +4,8 @@ export function configure(aurelia) {
   aurelia.use
     .standardConfiguration()
     .developmentLogging()
-    .plugin('donnelljenkins/aurelia-datagrid', config => 
-      config => config.defaultCssFramework = 'semantic');
+    .plugin('donnelljenkins/aurelia-datagrid'
+    , config => config.defaultCssFramework = 'semantic');
 
   //Uncomment the line below to enable animation.
   //aurelia.use.plugin('aurelia-animator-css');

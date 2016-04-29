@@ -332,8 +332,8 @@
 --------------------*/
 
 /* For source only. Modified in gulp for dist */
-@imagePath : '../../themes/default/assets/images';
-@fontPath  : '../../themes/default/assets/fonts';
+@imagePath : "../../../../../assets";
+@fontPath  : "../../../../../jspm_packages/npm/font-awesome@4.6.1/css";
 
 /*-------------------
        Em Sizes
