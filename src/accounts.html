@@ -1,16 +1,24 @@
 <template>
-  <div class="ui segment" style="padding-top:50px">
-    <div class="ui top attached black header">Accounts</div>
-    <grid css-framework="semantic" data-source.bind="accounts">
-      <template replace-part="grid-template">
-        <grid-column property="CompoundAccountNumber" filterable></grid-column>
-        <grid-column property="CustodianAccountNumber" filterable></grid-column>
-        <grid-column property="Strategy"></grid-column>
-        <grid-column property="Allocation"></grid-column>
-        <grid-column property="AccountStatus"></grid-column>
-        <grid-column property="Updated"></grid-column>
-      </template>
-    </grid>
+  <div class="panel panel-primary" style="margin-top:40px">
+    <div class="panel-heading"> 
+      <h3 class="panel-title">Account Management</h3> 
+    </div>
+    <div class="panel-body" style="padding=5px 10px">
+      <grid css-framework="bootstrap" data-source.bind="accounts">
+        <template replace-part="grid-template">
+          <grid-column property="CompoundAccountNumber" filterable></grid-column>
+          <grid-column property="CustodianAccountNumber" filterable></grid-column>
+          <grid-column property="Strategy"></grid-column>
+          <grid-column property="Allocation"></grid-column>
+          <grid-column property="AccountStatus"></grid-column>
+          <grid-column-edit
+              edit-click.call="editItem($event, row)"
+              save-click.call="saveItem($event, row)"
+              cancel-click.call="cancelItem($event, row)">
+          </grid-column-edit>
+        </template>
+      </grid>
+    </div>
   </div>
 </template>
 <!--

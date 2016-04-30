@@ -13,18 +13,6 @@ export class App {
         name: 'advisors',      
         moduleId: 'advisors',      
         nav: true, title: 'Advisors' 
-      },
-      { 
-        route: ['strategies'], 
-        name: 'strategies',      
-        moduleId: 'strategies',      
-        nav: true, title: 'Strategies' 
-      },
-      { 
-        route: ['billing'], 
-        name: 'billing',      
-        moduleId: 'billing',      
-        nav: true, title: 'Billing' 
       }
       ]);
 

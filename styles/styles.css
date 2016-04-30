@@ -1,3 +1,30 @@
+.navbar {
+  height: 60px;
+  
+}
+.navbar-brand {
+  float: left;
+  height: 60px;
+  padding: 5px 15px;
+  font-size: 18px;
+  line-height: 60px;
+}
+
+.table {
+  margin-bottom: 1px;
+}
+.panel {
+  margin: 20px;
+}
+.panel-body {
+  padding-right: 0px;
+  padding-left: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+
+
 
 
 body {
