@@ -5,7 +5,6 @@ import {SraData} from './services/sra-data';
 
 @inject(SraData, Router)
 export class AccountsList {
-  heading = 'SRA Accounts';
   accounts = [];
 
   constructor(sraData, router) {
@@ -14,8 +13,8 @@ export class AccountsList {
   }
 
   activate() {
-    return this.sraData.getAccounts().then(accounts => 
-      this.accounts = accounts);
+    this.sraData.getAccounts()
+      .then(accounts => this.accounts = accounts);
   }
   
   select(id) {

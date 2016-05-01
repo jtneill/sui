@@ -12,7 +12,7 @@ export class Accounts {
   }
 
   activate(params) {
-      return this.sraData.getAccount(params.id)
+     this.sraData.getAccount(params.id)
         .then(account => this.account = account);
   }
   

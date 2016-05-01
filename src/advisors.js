@@ -11,7 +11,7 @@ export class Advisors {
   }
 
   activate() {
-      return this.sraData.getAdvisors()
-      .then(advisors => this.advisors = advisors);
+      this.sraData.getAdvisors()
+        .then(advisors => this.advisors = advisors);
   }
 }
