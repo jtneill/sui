@@ -12,10 +12,8 @@ export class Accounts {
   }
 
   activate(params) {
-      console.log(params.id);
-      this.sraData.getAccount(params.id)
-      .then(account => this.account = account);
-      return this.account;
+      return this.sraData.getAccount(params.id)
+        .then(account => this.account = account);
   }
   
   editItem(event, row) {

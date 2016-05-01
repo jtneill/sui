@@ -14,9 +14,8 @@ export class AccountsList {
   }
 
   activate() {
-    this.sraData.getAccounts().then(accounts => 
+    return this.sraData.getAccounts().then(accounts => 
       this.accounts = accounts);
-    return this.accounts;
   }
   
   select(id) {

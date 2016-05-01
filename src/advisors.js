@@ -1,25 +1,17 @@
 import {inject} from 'aurelia-framework';
-import {HttpClient} from 'aurelia-fetch-client';
-import 'fetch';
+import {SraData} from './services/sra-data';
 
-@inject(HttpClient)
+@inject(SraData)
 export class Advisors {
   heading = 'Advisors';
   advisors = [];
 
-  constructor(http) {
-    http.configure(config => {
-      config
-        .useStandardConfiguration()
-        .withBaseUrl('http://localhost:5000/api/');
-    });
-
-    this.http = http;
+  constructor(sraData) {
+    this.sraData = sraData;
   }
 
   activate() {
-      return this.http.fetch('advisors')
-      .then(response => response.json())
+      return this.sraData.getAdvisors()
       .then(advisors => this.advisors = advisors);
   }
 }

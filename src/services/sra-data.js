@@ -27,7 +27,7 @@ export class SraData {
     
     getAccounts() {
         return this.http.fetch('accounts')
-         .then(response => {
+            .then(response => {
              return response.json();
             });
     }
@@ -39,4 +39,10 @@ export class SraData {
             });
     }
     
+    getAdvisors(){
+        return this.http.fetch('advisors')
+            .then(response => {
+                return response.json();
+            });
+    }
 }
