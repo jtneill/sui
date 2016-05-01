@@ -6,6 +6,7 @@ System.config({
     "github:*": "jspm_packages/github/*",
     "npm:*": "jspm_packages/npm/*"
   },
+
   map: {
     "aurelia-animator-css": "npm:aurelia-animator-css@1.0.0-beta.1.2.0",
     "aurelia-bootstrapper": "npm:aurelia-bootstrapper@1.0.0-beta.1.2.0",
@@ -24,6 +25,7 @@ System.config({
     "donnelljenkins/aurelia-datagrid": "github:donnelljenkins/aurelia-datagrid@0.1.6",
     "fetch": "github:github/fetch@0.11.0",
     "font-awesome": "npm:font-awesome@4.6.1",
+    "nvd3": "npm:nvd3@1.8.3",
     "text": "github:systemjs/plugin-text@0.0.3",
     "github:donnelljenkins/aurelia-datagrid@0.1.6": {
       "aurelia-binding": "npm:aurelia-binding@1.0.0-beta.1.3.2",
@@ -174,6 +176,9 @@ System.config({
     },
     "npm:lodash@3.10.1": {
       "process": "github:jspm/nodelibs-process@0.1.2"
+    },
+    "npm:nvd3@1.8.3": {
+      "d3": "npm:d3@3.5.16"
     },
     "npm:process@0.11.2": {
       "assert": "github:jspm/nodelibs-assert@0.1.0"

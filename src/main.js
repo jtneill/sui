@@ -5,7 +5,7 @@ export function configure(aurelia) {
     .standardConfiguration()
     .developmentLogging()
     .plugin('donnelljenkins/aurelia-datagrid'
-    , config => {
+      , config => {
         config.defaultCssFramework = 'bootstrap';
         config.defaultFilterStrategy = 'contains';
       });
