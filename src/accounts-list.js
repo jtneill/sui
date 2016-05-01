@@ -3,9 +3,9 @@ import {HttpClient, json} from 'aurelia-fetch-client';
 
 
 @inject(HttpClient)
-export class Accounts {
-  heading = 'Account Detail';
-  account = [];
+export class AccountsList {
+  heading = 'SRA Accounts';
+  accounts = [];
 
   constructor(http) {
     http.configure(config => {
@@ -27,11 +27,10 @@ export class Accounts {
     this.http = http;
   }
 
-  activate(params) {
-      console.log(params.id);
-      return this.http.fetch(`accounts/${params.id}`)
+  activate() {
+      return this.http.fetch('accounts')
       .then(response => response.json())
-      .then(account => this.account = account);
+      .then(accounts => this.accounts = accounts);
   }
   
   editItem(event, row) {

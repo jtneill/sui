@@ -1,50 +1,73 @@
 <template>
-  <div class="panel panel-primary" style="margin-top:40px">
-    <div class="panel-heading"> 
-      <h3 class="panel-title">Account Management</h3> 
-    </div>
-    <div class="panel-body" style="padding=5px 10px">
-      <grid css-framework="bootstrap" data-source.bind="accounts">
-        <template replace-part="grid-template">
-          <grid-column property="CompoundAccountNumber" filterable></grid-column>
-          <grid-column property="CustodianAccountNumber" filterable></grid-column>
-          <grid-column property="Strategy"></grid-column>
-          <grid-column property="Allocation"></grid-column>
-          <grid-column property="AccountStatus"></grid-column>
-          <grid-column-edit
-              edit-click.call="editItem($event, row)"
-              save-click.call="saveItem($event, row)"
-              cancel-click.call="cancelItem($event, row)">
-          </grid-column-edit>
-        </template>
-      </grid>
-    </div>
+  <div class="container">
+    <form submit.delegate="saveItem()" novalidate>
+      <!-- header -->
+
+      <!-- account fields -->
+      <div class="row">
+        <div class="col s12 m10">
+          <div class="row">
+            <div class="input-field col s12 m4">
+              <input id="CompoundAccountNumber" type="text" value.bind="account.CompoundAccountNumber">
+              <label for="CompoundAccountNumber" materialize>CompoundAccountNumber</label>
+            </div>
+            <!--<div class="input-field col s12 m4">
+              <input id="LastName" type="text" value.bind="entity.LastName">
+              <label for="LastName" materialize>Last Name</label>
+            </div>
+            <div class="input-field col s12 m4">
+              <input id="Title" type="text" value.bind="entity.Title">
+              <label for="Title" materialize>Title</label>
+            </div>-->
+          </row>
+          <row>
+            <!--<div class="input-field col s12 m3">
+              <input id="HireDate" type="text" materialize="datepicker" value.bind="entity.HireDate | dateFormat:'M/D/YYYY'">
+              <label for="HireDate" materialize>Hire Date</label>
+            </div>
+            <div class="input-field col s12 m2">
+              <input id="Extension" type="text" value.bind="entity.Extension">
+              <label for="Extension" materialize>Extension</label>
+            </div>
+            <div class="input-field col s12 m4">
+              <input id="HomePhone" type="text" value.bind="entity.HomePhone">
+              <label for="HomePhone" materialize>Home Phone</label>
+            </div>-->
+            <div class="input-field col s12 m3">
+              <input id="Strategy" type="text" value.bind="account.Strategy">
+              <label for="Strategy" materialize>Strategy</label>
+            </div>
+          </div>
+        </div>
+      </div>
+<!--
+      <div class="row">
+        <h4>Address</h4>
+        <div class="input-field col s12 m4">
+          <input id="Address" type="text" value.bind="entity.Address">
+          <label for="Address" materialize>Address</label>
+        </div>
+        <div class="input-field col s12 m4">
+          <input id="City" type="text" value.bind="entity.City">
+          <label for="City" materialize>City</label>
+        </div>
+        <div class="input-field col s12 m2">
+          <input id="Region" type="text" value.bind="entity.Region">
+          <label for="Region" materialize>Region</label>
+        </div>
+        <div class="input-field col s12 m2">
+          <input id="PostalCode" type="tel" value.bind="entity.PostalCode">
+          <label for="PostalCode" materialize>Postal Code</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <h4>Notes</h4>
+        <div class="input-field col s12">
+          <textarea id="Notes" class="materialize-textarea" value.bind="entity.Notes"></textarea>
+          <label for="Notes" class="active">Notes</label>
+        </div>
+      </div>-->
+    </form>
   </div>
 </template>
-<!--
-<grid-column property="AUM"></grid-column>
-<grid-column property="Cash"></grid-column>
-<grid-column property="Underlying"></grid-column>
-<grid-column property="Option"></grid-column>
-<grid-column property="StrategyFocus"></grid-column>
-<grid-column property="StrategyRules"></grid-column>
-<grid-column property="Advisor"></grid-column>
-<grid-column property="RepCode"></grid-column>   
-<grid-column property="Custodian"></grid-column>
-{
-    "Id": 2,
-    "CompoundAccountNumber": "A.T.IOC.00001",
-    "CustodianAccountNumber": "546729264",
-    "Advisor": null,
-    "ClientAdvisor": null,
-    "InstitutionalAdvisor": null,
-    "RepCode": null,
-    "Strategy": null,
-    "Custodian": null,
-    "Allocation": 0.75,
-    "StrategyFocus": null,
-    "AccountStatus": null,
-    "StrategyRules": null,
-    "Updated": "2016-04-20T03:21:02.183"
-  }
-  -->

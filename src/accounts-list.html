@@ -1,0 +1,50 @@
+<template>
+  <div class="panel panel-primary" style="margin-top:40px">
+    <div class="panel-heading"> 
+      <h3 class="panel-title">Account Management</h3> 
+    </div>
+    <div class="panel-body" style="padding=5px 10px">
+      <grid css-framework="bootstrap" data-source.bind="accounts">
+        <template replace-part="grid-template">
+          <grid-column property="CompoundAccountNumber" filterable></grid-column>
+          <grid-column property="CustodianAccountNumber" filterable></grid-column>
+          <grid-column property="Strategy"></grid-column>
+          <grid-column property="Allocation"></grid-column>
+          <grid-column property="AccountStatus"></grid-column>
+          <grid-column-edit
+              edit-click.call="editItem($event, row)"
+              save-click.call="saveItem($event, row)"
+              cancel-click.call="cancelItem($event, row)">
+          </grid-column-edit>
+        </template>
+      </grid>
+    </div>
+  </div>
+</template>
+<!--
+<grid-column property="AUM"></grid-column>
+<grid-column property="Cash"></grid-column>
+<grid-column property="Underlying"></grid-column>
+<grid-column property="Option"></grid-column>
+<grid-column property="StrategyFocus"></grid-column>
+<grid-column property="StrategyRules"></grid-column>
+<grid-column property="Advisor"></grid-column>
+<grid-column property="RepCode"></grid-column>   
+<grid-column property="Custodian"></grid-column>
+{
+    "Id": 2,
+    "CompoundAccountNumber": "A.T.IOC.00001",
+    "CustodianAccountNumber": "546729264",
+    "Advisor": null,
+    "ClientAdvisor": null,
+    "InstitutionalAdvisor": null,
+    "RepCode": null,
+    "Strategy": null,
+    "Custodian": null,
+    "Allocation": 0.75,
+    "StrategyFocus": null,
+    "AccountStatus": null,
+    "StrategyRules": null,
+    "Updated": "2016-04-20T03:21:02.183"
+  }
+  -->

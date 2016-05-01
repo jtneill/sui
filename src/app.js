@@ -5,7 +5,7 @@ export class App {
       { 
         route: ['', 'accounts'], 
         name: 'accounts',      
-        moduleId: 'accounts',      
+        moduleId: 'accounts-section',      
         nav: true, title: 'Accounts' 
       },
       { 
