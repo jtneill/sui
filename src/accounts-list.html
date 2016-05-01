@@ -6,11 +6,14 @@
     <div class="panel-body" style="padding=5px 10px">
       <grid css-framework="bootstrap" data-source.bind="accounts">
         <template replace-part="grid-template">
+          <grid-column property="Id"></grid-column>
           <grid-column property="CompoundAccountNumber" filterable></grid-column>
           <grid-column property="CustodianAccountNumber" filterable></grid-column>
           <grid-column property="Strategy"></grid-column>
           <grid-column property="Allocation"></grid-column>
           <grid-column property="AccountStatus"></grid-column>
+          <grid-column-button caption="Detail" 
+            button-click.call="select(row.Id)"></grid-column-button>
           <grid-column-edit
               edit-click.call="editItem($event, row)"
               save-click.call="saveItem($event, row)"
@@ -21,17 +24,7 @@
     </div>
   </div>
 </template>
-<!--
-<grid-column property="AUM"></grid-column>
-<grid-column property="Cash"></grid-column>
-<grid-column property="Underlying"></grid-column>
-<grid-column property="Option"></grid-column>
-<grid-column property="StrategyFocus"></grid-column>
-<grid-column property="StrategyRules"></grid-column>
-<grid-column property="Advisor"></grid-column>
-<grid-column property="RepCode"></grid-column>   
-<grid-column property="Custodian"></grid-column>
-{
+<!--{
     "Id": 2,
     "CompoundAccountNumber": "A.T.IOC.00001",
     "CustodianAccountNumber": "546729264",

@@ -1,36 +1,26 @@
 import {inject} from 'aurelia-framework';
-import {HttpClient, json} from 'aurelia-fetch-client';
+import {Router} from 'aurelia-router';
+import {SraData} from './services/sra-data';
 
 
-@inject(HttpClient)
+@inject(SraData, Router)
 export class AccountsList {
   heading = 'SRA Accounts';
   accounts = [];
 
-  constructor(http) {
-    http.configure(config => {
-      config
-        .useStandardConfiguration()
-        .withBaseUrl('http://localhost:5000/api/')
-        .withInterceptor({
-            request(request) {
-                console.log(`Requesting ${request.method} ${request.url}`);
-                return request; // you can return a modified Request, or you can short-circuit the request by returning a Response
-            },
-            response(response) {
-                console.log(`Received ${response.status} ${response.url}`);
-                return response; // you can return a modified Response
-            }
-        });
-    });
-
-    this.http = http;
+  constructor(sraData, router) {
+    this.router = router;
+    this.sraData = sraData;
   }
 
   activate() {
-      return this.http.fetch('accounts')
-      .then(response => response.json())
-      .then(accounts => this.accounts = accounts);
+    this.sraData.getAccounts().then(accounts => 
+      this.accounts = accounts);
+    return this.accounts;
+  }
+  
+  select(id) {
+      this.router.navigate(`accounts/${id}`)
   }
   
   editItem(event, row) {
