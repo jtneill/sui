@@ -6,7 +6,6 @@ System.config({
     "github:*": "jspm_packages/github/*",
     "npm:*": "jspm_packages/npm/*"
   },
-
   map: {
     "aurelia-animator-css": "npm:aurelia-animator-css@1.0.0-beta.1.2.0",
     "aurelia-bootstrapper": "npm:aurelia-bootstrapper@1.0.0-beta.1.2.0",
@@ -22,11 +21,18 @@ System.config({
     "aurelia-templating-resources": "npm:aurelia-templating-resources@1.0.0-beta.1.2.2",
     "aurelia-templating-router": "npm:aurelia-templating-router@1.0.0-beta.1.2.0",
     "bootstrap": "github:twbs/bootstrap@3.3.6",
+    "d3": "npm:d3@3.5.16",
+    "datatables": "github:DataTables/DataTables@1.10.11",
     "donnelljenkins/aurelia-datagrid": "github:donnelljenkins/aurelia-datagrid@0.1.6",
     "fetch": "github:github/fetch@0.11.0",
     "font-awesome": "npm:font-awesome@4.6.1",
+    "jquery": "npm:jquery@2.2.3",
     "nvd3": "npm:nvd3@1.8.3",
     "text": "github:systemjs/plugin-text@0.0.3",
+    "github:DataTables/DataTables@1.10.11": {
+      "css": "github:systemjs/plugin-css@0.1.21",
+      "jquery": "npm:jquery@2.2.3"
+    },
     "github:donnelljenkins/aurelia-datagrid@0.1.6": {
       "aurelia-binding": "npm:aurelia-binding@1.0.0-beta.1.3.2",
       "aurelia-dependency-injection": "npm:aurelia-dependency-injection@1.0.0-beta.1.2.0",

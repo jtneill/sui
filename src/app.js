@@ -13,6 +13,12 @@ export class App {
         name: 'advisors',      
         moduleId: 'advisors',      
         nav: true, title: 'Advisors' 
+      },
+      { 
+        route: ['aum'], 
+        name: 'aum',      
+        moduleId: 'account-aum-chart',      
+        nav: true, title: 'Aum' 
       }
       ]);
 
